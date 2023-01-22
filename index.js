@@ -45,8 +45,8 @@ async function mergeToHead(branch) {
   const { status, ...response } = await octokit.repos.merge({
     owner: owner,
     repo: repo,
-    base: branch,
-    head: headBranch,
+    base: headBranch,
+    head: branch,
   });
   switch (status) {
     case 201:
